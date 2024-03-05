@@ -1,1 +1,2 @@
 e:\Projects\Hayp\hayp.client\obj\Debug\hayp.client.esproj.CoreCompileInputs.cache
+E:\Proyecto_Grado\Hayp\hayp.client\obj\Debug\hayp.client.esproj.CoreCompileInputs.cache
