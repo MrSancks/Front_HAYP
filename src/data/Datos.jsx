@@ -35,7 +35,6 @@ const Datos = ({ selectedModels, presupuestosPorModelo }) => {
                             <tr>
                                 <th className="py-2 px-4 border border-gray-300">Nombre</th>
                                 <th className="py-2 px-4 border border-gray-300">Descripción</th>
-                                <th className="py-2 px-4 border border-gray-300">Imagen</th>
                                 <th className="py-2 px-4 border border-gray-300">Precio</th>
                             </tr>
                         </thead>
@@ -44,7 +43,6 @@ const Datos = ({ selectedModels, presupuestosPorModelo }) => {
                                 <tr key={id}>
                                     <td className="py-2 px-4 border border-gray-300">{component.nombre}</td>
                                     <td className="py-2 px-4 border border-gray-300">{component.descripcion}</td>
-                                    <td className="py-2 px-4 border border-gray-300">{component.image}</td>
                                     <td className="py-2 px-4 border border-gray-300">{component.precio}</td>
                                 </tr>
                             ))}

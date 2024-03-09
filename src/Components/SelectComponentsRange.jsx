@@ -6,7 +6,6 @@ import '../output.css';
 import Datos from '../data/Datos';
 import IaConnect from './IaConnect';
 import TablaCombinaciones from './TablaCombinaciones';
-
 function SelectComponentsRange() {
     const [presupuestoTotal, setPresupuestoTotal] = useState(0);
     const [presupuestosPorModelo, setPresupuestosPorModelo] = useState({});
