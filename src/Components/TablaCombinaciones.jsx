@@ -3,8 +3,6 @@ import axios from 'axios';
 
 const TablaCombinaciones = ({ combinaciones }) => {
     const [componenteImages, setComponenteImages] = useState({});
-
-
     const parsedCombinaciones = combinaciones.split('\n\n').map(combinacion => {
         const lines = combinacion.split('\n');
         const componentes = lines.slice(0, -1).map(line => {
@@ -14,8 +12,6 @@ const TablaCombinaciones = ({ combinaciones }) => {
         const total = parseFloat(lines[lines.length - 1].split(': ')[1]);
         return { componentes, total };
     });
-
-
     useEffect(() => {
         const fetchComponenteImages = async () => {
             const images = {};
