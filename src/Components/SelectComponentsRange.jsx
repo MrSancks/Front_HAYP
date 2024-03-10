@@ -6,6 +6,7 @@ import '../output.css';
 import Datos from '../data/Datos';
 import IaConnect from './IaConnect';
 import TablaCombinaciones from './TablaCombinaciones';
+import Header from './Header';
 function SelectComponentsRange() {
     const [presupuestoTotal, setPresupuestoTotal] = useState(0);
     const [presupuestosPorModelo, setPresupuestosPorModelo] = useState({});
@@ -73,6 +74,7 @@ function SelectComponentsRange() {
 
     return (
         <div className="flex flex-col items-center justify-center h-full">
+            <Header/>
             <label htmlFor="inputPresupuesto" className="text-2xl font-bold mb-2">Ingrese su Presupuesto:</label>
             <input
                 type="number"
@@ -113,7 +115,7 @@ function SelectComponentsRange() {
                 ))}
             </div>
 
-            <div className="flex flex-col items-center justify-center h-screen">
+            <div className="flex flex-col items-center justify-center">
                 <TablaCombinaciones combinaciones={combinaciones} />
             </div>
 

@@ -11,12 +11,12 @@ const InputChat = ({ sendMessage, loading }) => {
     };
 
     return (
-        <div className="input-box">
-            {loading && <progress style={{ width: "100%" }} />}
+        <div className="input-box flex items-center justify-between">
+            {loading && <progress className="w-full" />}
             <input
                 disabled={loading}
                 type="text"
-                className="form-control"
+                className="w-[64rem] px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Escribe tu mensaje..."
                 value={loading ? "Cargando..." : input}
                 onChange={(e) => setInput(e.target.value)}
