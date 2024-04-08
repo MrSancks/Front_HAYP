@@ -2,7 +2,7 @@ import axios from 'axios';
 import OpenAI from 'openai';
 const IaConnect = async (componentes, presupuesto) => {
 
-    const use = "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"
+    
     const componentesArray = Object.values(componentes);
     const modelos = Object.keys(componentes);
     let contexto = 'Tengo los siguientes componentes para armar una PC:\n';
