@@ -33,9 +33,10 @@ const Datos = ({ selectedModels, presupuestosPorModelo }) => {
                     <table className="w-full text-left border-collapse">
                         <thead>
                             <tr>
-                                <th className="py-2 px-4 border border-gray-300">Nombre</th>
-                                <th className="py-2 px-4 border border-gray-300">Descripción</th>
-                                <th className="py-2 px-4 border border-gray-300">Precio</th>
+                                <th className="py-2 px-4 border border-gray-300 text-center">Nombre</th>
+                                <th className="py-2 px-4 border border-gray-300 text-center">Descripción</th>
+                                <th className="py-2 px-4 border border-gray-300 text-center">Precio</th>
+                                <th className="py-2 px-4 border border-gray-300 text-center">Link</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,7 +44,12 @@ const Datos = ({ selectedModels, presupuestosPorModelo }) => {
                                 <tr key={id}>
                                     <td className="py-2 px-4 border border-gray-300">{component.nombre}</td>
                                     <td className="py-2 px-4 border border-gray-300">{component.descripcion}</td>
-                                    <td className="py-2 px-4 border border-gray-300">{component.precio}</td>
+                                    <td className="py-2 px-4 border border-gray-300">$ {component.precio}</td>
+                                    <td className="py-2 px-4 border border-gray-300">
+                                        <a href={`https://www.amazon.com/s?k=` + [component.nombre]} target="_blank" rel="noopener noreferrer">
+                                            {component.nombre}
+                                        </a>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>

@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import '../output.css';
+import { FaUser } from "react-icons/fa";
+
 
 const Header = () => {
     return (
-        <header className="flex items-center justify-between h-20 bg-gradient-to-r from-gray-500 to-gray-200 text-white w-11/12 rounded px-10">
+        <header className="flex items-center justify-between h-20 bg-gradient-to-r from-gray-500 to-gray-200 text-white w-11/12 rounded px-10 mb-4">
             <div className="flex items-center justify-start">
                 <h2 className="text-3xl font-semibold text-gray-800 dark:text-white">HAYP</h2>
             </div>
@@ -12,11 +14,18 @@ const Header = () => {
                     <p className="text-lg text-black font-semibold">Inicio</p>
                 </Link>
                 <Link to="/chat" className="hover:bg-gray-200">
-                    <p className="text-lg text-black font-semibold">BOT</p>
+                    <p className="text-lg text-black font-semibold">Generador</p>
                 </Link>
                 <Link to="/componentes" className="hover:bg-gray-200">
                     <p className="text-lg text-black font-semibold">Componentes</p>
                 </Link>
+                <Link to="/planes" className="hover:bg-gray-200">
+                    <p className="text-lg text-black font-semibold">Planes</p>
+                </Link>
+                <Link to="/login" className="hover:bg-gray-200">
+                    <FaUser className="text-black" />
+                </Link>
+                
             </nav>
         </header>
     );

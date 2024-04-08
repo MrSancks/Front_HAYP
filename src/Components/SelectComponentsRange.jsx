@@ -81,14 +81,8 @@ function SelectComponentsRange() {
                 id="inputPresupuesto"
                 value={presupuestoTotal}
                 onChange={(e) => setPresupuestoTotal(parseInt(e.target.value))}
-                className="border border-gray-300"
-            />
-            <div className="my-6">
-                <button onClick={handleGenerarCombinaciones} className="rounded-md bg-white text-sm text-gray-900 shadow-sm ring-1
-                                                                        text-lg ring-inset ring-gray-300 p-2 font-bold">Generar combinaciones</button>
-            </div>
-
-            
+                className="border border-gray-300 mb-6"
+            />  
 
             <div className="flex flex-wrap justify-center">
                 {modelos.map((modelo) => (
@@ -114,7 +108,10 @@ function SelectComponentsRange() {
                     </div>
                 ))}
             </div>
-
+            <div className="my-6">
+                <button onClick={handleGenerarCombinaciones} className="rounded-md bg-white text-sm text-gray-900 shadow-sm ring-1
+                                                                        text-lg ring-inset ring-gray-300 p-2 font-bold">Generar combinaciones</button>
+            </div>
             <div className="flex flex-col items-center justify-center">
                 <TablaCombinaciones combinaciones={combinaciones} />
             </div>

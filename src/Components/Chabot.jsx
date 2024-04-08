@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import dayjs from "dayjs";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import MDEditor from "@uiw/react-md-editor";
+import Markdown from 'react-markdown';
 import InputChat from "./InputChat.jsx";
 import Header from "./Header.jsx";
 
@@ -15,7 +15,7 @@ const HeaderBot = () => {
             <div className="flex justify-center items-center">
                 <b>HAYP BOT</b>
             </div>
-            <p className="text-gray-400 ml-4 mt-2">Pregúntenos acerca de todo lo relacionado con computadoras</p>
+            <p className="text-gray-400 ml-4 mt-2">Preguntenos acerca de todo lo relacionado con computadoras</p>
         </div>
     );
 };
@@ -62,16 +62,18 @@ const ChatBot = () => {
     };
 
     const convertMarkdownToReact = (text) => {
-        const boldRegex = /\*\*(.+?)\*\*/g;
-        text = text.replace(boldRegex, "<b>$1</b>");
-        text = text.replace(/\\n/g, "<br />");
-        const linkRegex = /\[([^\]]+)]\(([^)]+)\)/g;
-        text = text.replace(linkRegex, "<a href='$2'>$1</a>");
-        const imageRegex = /!\[([^\]]+)]\(([^)]+)\)/g;
-        text = text.replace(imageRegex, "<img src='$2' alt='$1' />");
 
-        return <div dangerouslySetInnerHTML={{ __html: text }} />;
+        return (
+            <Markdown components={{
+                // Puedes agregar componentes personalizados para otros elementos de Markdown
+                p: ({ children }) => <p className="message-text">{children}</p>,
+            }}>
+                {text}
+            </Markdown>
+        );
+
     };
+
 
 
     return (
@@ -96,9 +98,9 @@ const ChatBot = () => {
                                         }`}
                                 >
                                     {message.isCode ? (
-                                        <MDEditor.Markdown source={message.text} style={{ whiteSpace: "pre-wrap" }} />
+                                        <Markdown rehypePlugins={[rehypeRaw]}>{message.text}</Markdown>
                                     ) : (
-                                        <p className="message-text">{convertMarkdownToReact(message.text)}</p>
+                                        convertMarkdownToReact(message.text)
                                     )}
                                     <span className="time text-xs mt-1 text-gray-600">
                                         {message.timestamp ? dayjs(message.timestamp).format("DD.MM.YYYY HH:mm:ss") : ""}
