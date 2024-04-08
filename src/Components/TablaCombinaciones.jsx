@@ -7,9 +7,9 @@ const TablaCombinaciones = ({ combinaciones }) => {
         const lines = combinacion.split('\n');
         const componentes = lines.slice(0, -1).map(line => {
             const [nombre, precio] = line.split(': ');
-            return { nombre: nombre.trim(), precio: parseFloat(precio.trim()) };
+            return { nombre: nombre.trim(), precio: parseFloat(precio) };
         });
-        const total = parseFloat(lines[lines.length - 1].split(': ')[1]);
+        const total = componentes.reduce((accum, current) => accum + current.precio, 0).toFixed(2);
         return { componentes, total };
     });
     

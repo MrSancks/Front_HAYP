@@ -18,15 +18,15 @@ const Login = () => {
             });
 
             if (response.ok) {
-                // Redirigir al usuario a la p�gina deseada despu�s del inicio de sesi�n
-                navigate('/');
+                alert('Has logeado correctamente');
+                navigate('/planes');
             } else {
                 // Manejar errores de inicio de sesi�n
                 alert('Credenciales inv�lidas. Int�ntalo de nuevo.');
             }
         } catch (error) {
             console.error('Error al iniciar sesi�n:', error);
-            alert('Error al iniciar sesi�n. Por favor, int�ntalo de nuevo m�s tarde.');
+            alert('Error al iniciar sesion. Por favor, int�ntalo de nuevo m�s tarde.');
         }
     };
 
